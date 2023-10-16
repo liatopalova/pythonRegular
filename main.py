@@ -1,6 +1,6 @@
 import re
 
-print("1. Phone_number/n2. Mobile_number/n3. Email/n4. Full_name/n")
+print("1. Phone_number\n2. Mobile_number\n3. Email\n4. Full_name\n")
 user_select = int(input("Enter menu item: "))
 
 

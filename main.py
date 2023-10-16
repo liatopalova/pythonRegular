@@ -35,4 +35,15 @@ def validate_email(email):
 print(validate_email("lia.topalova@gmail.com"))
 
 
+def validate_full_name(name):
+    pattern = r'^[A-Za-zА-Яа-я]{2,20}?[\s]?([\s][A-Za-zА-Яа-я]{2,20}){0,2}?[\s]?$'
+    if re.match(pattern, name):
+        return True
+    else:
+        return False
+
+
+print(validate_full_name("Топалова Lia "))
+
+
 

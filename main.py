@@ -1,5 +1,8 @@
 import re
 
+print("1. Phone_number/n2. Mobile_number/n3. Email/n4. Full_name/n")
+user_select = int(input("Enter menu item: "))
+
 
 def validate_phone_number(number):
     current_num = re.sub(r'\D', '', number)
@@ -10,18 +13,12 @@ def validate_phone_number(number):
         return False
 
 
-print(validate_phone_number("0462 5-18-28"))
-
-
 def validate_mobile_number(number):
-    pattern = r'^[+]{0,1}?\d{2}?[\s]?\(?\d{3}\)?[-\s]?\d{3}?[-\s]?\d{2}?[-\s]?\d{2}$'
+    pattern = r'^[+]{0,1}\d{,2}?[\s]?\(?\d{3}\)?[-\s]?\d{3}?[-\s]?\d{2}?[-\s]?\d{2}$'
     if re.match(pattern, number):
         return True
     else:
         return False
-
-
-print(validate_mobile_number("+38(093)519 67 78"))
 
 
 def validate_email(email):
@@ -32,9 +29,6 @@ def validate_email(email):
         return False
 
 
-print(validate_email("lia.topalova@gmail.com"))
-
-
 def validate_full_name(name):
     pattern = r'^[A-Za-zА-Яа-я]{2,20}?[\s]?([\s][A-Za-zА-Яа-я]{2,20}){0,2}?[\s]?$'
     if re.match(pattern, name):
@@ -43,7 +37,18 @@ def validate_full_name(name):
         return False
 
 
-print(validate_full_name("Топалова Lia "))
-
-
-
+match user_select:
+    case 1:
+        phone_number = input("Enter phone number: ")
+        print(validate_phone_number(phone_number))
+    case 2:
+        mobile_number = input("Enter mobile number: ")
+        print(validate_mobile_number(mobile_number))
+    case 3:
+        user_email = input("Enter email: ")
+        print(validate_email(user_email))
+    case 4:
+        full_name = input("Enter name: ")
+        print(validate_full_name(full_name))
+    case _:
+        print("Select menu item!")

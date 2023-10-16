@@ -22,3 +22,17 @@ def validate_mobile_number(number):
 
 
 print(validate_mobile_number("+38(093)519 67 78"))
+
+
+def validate_email(email):
+    pattern = r'^(?=.{10,30}$)[\w.-]+@[A-Za-z]+\.(com|net|org)$'
+    if re.match(pattern, email):
+        return True
+    else:
+        return False
+
+
+print(validate_email("lia.topalova@gmail.com"))
+
+
+
